@@ -1,0 +1,391 @@
+* {
+  /* Fonts */
+
+  --g-optical-sizing: auto;
+  --g-font-style: normal;
+
+  --g-font-family-big: "Ysabeau Infant", sans-serif;
+  --g-font-weight-big: 500;
+
+  --g-font-family-small: "Ysabeau Infant", sans-serif;
+  --g-font-weight-small: 400;
+
+  --g-letter-spacing-big: 0.8px;
+  --g-letter-spacing-small: 0.2px;
+
+  /* Colors */
+
+  --main-color: #2b235a;
+  --hover-color: #20183b;
+
+  --text-color: white;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
+  /* border: 2px solid; */
+}
+
+img {
+  width: 100%;
+  height: 100vh;
+
+  filter: brightness(1);
+}
+
+/* prevent downloading image */
+body .background-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body .background-layer .container {
+  width: 80%;
+  height: 90vh;
+
+  background-color: #2b235a70;
+  margin: auto;
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-around;
+
+  padding: 1rem 0px;
+
+  border-radius: 20px;
+}
+#mainWeather,
+#secondryWeather {
+  width: 40%;
+  height: 100%;
+  background-color: rgba(2, 2, 85, 1);
+
+  border-radius: inherit;
+  padding: 1rem;
+}
+
+.main-container,
+.secondry-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(13, 5, 90, 0.7);
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 10px;
+}
+.main-container .search {
+  width: 100%;
+  height: 5vh;
+
+  padding: 10px;
+}
+.span-rows {
+  grid-column: span 2;
+}
+.main-container .search .search-bar {
+  width: 100%;
+  height: 4vh;
+
+  background-color: rgba(223, 218, 241, 0.8);
+  border-radius: 50px;
+  border: none;
+
+  /* remove input outline */
+  outline: none;
+  letter-spacing: 1.4px;
+  color: var(--text-color);
+  /* change pointer position in input */
+  padding-left: 1rem;
+}
+
+#Tempreture {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+
+  padding: 2rem;
+}
+
+/* set all tempreture div's images size   */
+#Tempreture img,
+#Forecast img {
+  width: 30px;
+  height: 30px;
+}
+#Tempreture > div {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+
+  border-radius: 10px;
+  border: none;
+}
+.main-container .search .search-bar:hover {
+  border: 2px solid blue;
+}
+
+/* custmize */
+#Tempreture .main-temp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+
+  /* background-color: red; */
+}
+.main-temp * {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+}
+.main-temp * * {
+  text-align: center;
+  color: var(--text-color);
+
+  font-family: var(--g-font-family-small);
+  font-weight: var(--g-font-weight-small);
+}
+#tempDegree h1 {
+  font-size: 2rem;
+}
+#tempDesc p {
+  padding: 1rem;
+
+  font-size: larger;
+  text-align: start;
+  overflow: hidden;
+  height: 100px;
+  /* width: 200p; */
+}
+
+/* Feels Like div */
+.feels-like-temp .fl-container {
+  width: 100%;
+
+  min-height: fit-content;
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+.feels-like-temp .fl-degree,
+.precpictation .precp-container,
+.visibility .vis-container,
+.hum-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+
+  padding: 10px 0px 4px 10px;
+  /* border: 2px solid red; */
+}
+
+.feels-like-temp .fl-degree p {
+  color: #cfcfda;
+  font-family: var(--g-font-family-small);
+  font-weight: 600;
+  opacity: 0.8;
+}
+.feels-like-temp .fl-container h1 {
+  padding-left: 10px;
+
+  color: var(--text-color);
+  font-family: var(--g-font-family-big);
+  font-weight: var(--g-font-weight-big);
+}
+.feels-like-temp .fl-container > p {
+  padding-left: 10px;
+
+  color: var(--text-color);
+  font-family: var(--g-font-family-small);
+  margin-top: 10px;
+  opacity: 0.7;
+  padding: 10px;
+
+  overflow: hidden;
+}
+
+/*  precpictaion div */
+.precpictation {
+  display: flex;
+  flex-direction: column;
+
+  color: var(--text-color);
+}
+
+.precpictation .precp-container p {
+  font-family: var(--g-font-family-small);
+
+  position: relative;
+  top: -5px;
+  left: 0px;
+
+  font-weight: 400;
+  opacity: 0.8;
+}
+.precpictation h1 {
+  font-family: var(--g-font-family-big);
+  font-weight: var(--g-font-weight-big);
+  padding: 10px 0px 0px 10px;
+}
+.precpictation p {
+  font-family: var(--g-font-family-small);
+  font-weight: var(--g-font-family-small);
+  padding: 0px 0px 10px 10px;
+
+  opacity: 0.8;
+}
+.precpictation .precp-time {
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+/* Visibility  div*/
+.visibility {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.visibility .vis-container p {
+  opacity: 0.8;
+  font-family: var(--g-font-family-small);
+  font-weight: var(--g-font-weight-small);
+}
+.visibility h1 {
+  font-family: var(--g-font-family-big);
+  font-weight: var(--g-font-weight-big);
+  padding: 10px 0px 0px 10px;
+}
+
+/* Humdity div */
+.humdity {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.humdity .hum-container p {
+  opacity: 0.8;
+  font-family: var(--g-font-family-small);
+  font-weight: var(--g-font-weight-small);
+}
+.humdity h1 {
+  font-family: var(--g-font-family-big);
+  font-weight: var(--g-font-weight-big);
+  padding: 10px 0px 0px 10px;
+}
+.humdity h1 span {
+  color: rgb(221, 221, 230);
+  opacity: 0.9;
+}
+
+/*** finish main weather ***/
+
+/* start Secondry weather */
+
+/* #secondryWeather {
+  height: 90vh;
+  background-color: red;
+} */
+#secondryWeather .secondry-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  gap: 20px;
+
+  border-radius: 10px;
+}
+#secondryWeather .secondry-container > .secondry-div {
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--main-color);
+  border-radius: inherit;
+}
+
+/* custmize */
+
+#Forecast * {
+  /* border: 2px solid black; */
+}
+
+#Forecast p {
+  color: var(--text-color);
+  font-family: var(--g-font-family-small);
+  font-weight: var(--g-font-weight-small);
+  letter-spacing: var(--g-letter-spacing-big);
+}
+#Forecast .fc-conainer {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 1rem;
+}
+#Forecast .fc-conainer .fc-titel {
+  width: 100%;
+  height: 20%;
+  display: flex;
+
+  border-bottom: 2px solid #666270;
+  padding-bottom: 1rem;
+  /* background-color: red; */
+}
+#Forecast .fc-conainer .fc-titel p {
+  height: 100%;
+  position: relative;
+  top: 2px;
+}
+#Forecast .fc-conainer .h-fc {
+  width: 100%;
+  height: 80%;
+  display: flex;
+}
+#Forecast .fc-conainer .h-fc {
+  width: 100%;
+  height: 100%;
+  border: 5px solid rgb(252, 247, 247);
+  display: flex;
+  padding: 1rem;
+  overflow: scroll;
+}
+
+#Forecast .fc-conainer .h-fc div {
+  width: 100px;
+  height: 40px;
+  /* display: inline; */
+  background-color: red;
+}
+
+/* EDIT SCROLL BAR CONTAINER */
+
+/** start Secondry weather **/
+
+/*
+problems while coding: 
+
+- problem desc: the problem is that iwant to set the div in front of image and then set the opacity to 0.1 to almost hide it but it's effect still , 
+  the issue is when any child added in that div it also will have the opacity as it's parent .
+
+  Sol: the solution is to use transprancy instead of opacity using rgba instead of opacity .
+
+  state: solved .
+  ------------------------------------------------------------------------------------------------
+
+
+*/
